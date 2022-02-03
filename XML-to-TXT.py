@@ -7,6 +7,12 @@ with open ('metamorphosis_clean.txt','w') as f:
         if 'type' in child.attrib and child.attrib['type']=='2':
             a_string = child.attrib['body']
             a_string = re.sub(r'http\S+', '', a_string)
+            a_string = re.sub(r'<3', '', a_string)
+            a_string = re.sub(r'\d a.m.', '', a_string)
+            a_string = re.sub(r'\d am', '', a_string)
+            a_string = re.sub(r'\d p.m.', '', a_string)
+            a_string = re.sub(r'\d pm', '', a_string)
+            a_string = re.sub(r'\d', '', a_string)
             a_string = re.sub(r'/', '/ ', a_string)
             a_string = re.sub(r'\.', ' ', a_string)
             a_string = re.sub(r'\!', ' ', a_string)

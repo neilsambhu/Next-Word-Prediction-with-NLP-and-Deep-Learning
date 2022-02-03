@@ -101,8 +101,8 @@ reduce = ReduceLROnPlateau(monitor='loss', factor=0.2, patience=3, min_lr=0.0001
 logdir='logsnextword1'
 tensorboard_Visualization = TensorBoard(log_dir=logdir)
 model.compile(loss="categorical_crossentropy", optimizer=Adam(lr=0.001))
-model.fit(X, y, epochs=150, batch_size=64, callbacks=[checkpoint, reduce, tensorboard_Visualization])
-# model.fit(X, y, epochs=10, batch_size=64, callbacks=[checkpoint, reduce, tensorboard_Visualization])
+# model.fit(X, y, epochs=1000, batch_size=64, callbacks=[checkpoint, reduce, tensorboard_Visualization])
+model.fit(X, y, epochs=10, batch_size=64, callbacks=[checkpoint, reduce, tensorboard_Visualization])
 # https://stackoverflow.com/questions/26649716/how-to-show-pil-image-in-ipython-notebook
 # tensorboard --logdir="./logsnextword1"
 # http://DESKTOP-U3TSCVT:6006/
